@@ -1,0 +1,229 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /*Primary Colors*/
+
+    --Red: hsl(0, 78%, 62%);
+    --Cyan: hsl(180, 62%, 55%);
+    --Orange: hsl(34, 97%, 64%);
+    --Blue: hsl(212, 86%, 64%);
+
+    /*Neutral Colors*/
+
+    --Very-Dark-Blue: hsl(234, 12%, 34%);
+    --Grayish-Blue: hsl(229, 6%, 66%);
+    --Very-Light-Gray: hsl(0, 0%, 98%);
+}
+
+
+
+html {
+    font-size: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+main {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/*Container Positioning & Styling*/
+
+#main-container {
+    max-width: 20rem;
+    display: flex;
+    flex-direction: column;
+    padding: 5rem 2rem;
+    background-color: var(--Very-Light-Gray);
+}
+
+.supervisor {
+    margin-top: 4rem;
+    border-top: 4px solid var(--Cyan);
+}
+
+.team {
+    border-top: 4px solid var(--Red);
+}
+
+.karma {
+    border-top: 4px solid var(--Orange);
+}
+
+.calc {
+    border-top: 4px solid var(--Blue);
+}
+
+.box {
+    padding: 1rem 1rem 3.5rem 1rem;
+    margin-top: 1.5rem;
+    border-radius: 0.3rem;
+    background-color: white;
+    box-shadow: 0 3px 3px 0 grey;
+    min-width: 16rem;
+}
+
+/*Text Styling & Positioning*/
+
+
+h2 {
+    color: var(--Very-Dark-Blue);
+    font-weight: 200;
+    font-size: 1.3rem;
+}
+
+h2 span {
+    display: block;
+    color: var(--Very-Dark-Blue);
+    font-weight: 600;
+}
+
+h2+p {
+    color: var(--Grayish-Blue);
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    line-height: 1.5rem;
+}
+
+.intro {
+    text-align: center;
+}
+
+
+h3 {
+    color: var(--Very-Dark-Blue);
+}
+
+h3+p {
+    color: var(--Grayish-Blue);
+    margin-top: 0.5rem;
+    font-size: 0.7rem;
+}
+
+/*Images*/
+
+img {
+    float: right;
+    transform: translateY(50%)
+}
+
+/*Media Queries*/
+
+@media (min-width: 1050px) {
+
+    body {
+        background-color: var(--Very-Light-Gray);
+    }
+
+    /*Container Styling & Positioning*/
+
+    #main-container {
+        min-height: 100vh;
+        min-width: 65rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        padding: 2rem 0;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box {
+        max-width: 20rem;
+        margin: 0;
+        padding: 1.3rem 1.3rem 2.5rem 1.3rem;
+        justify-self: center;
+    }
+
+    .intro {
+        grid-column: 1 / 4;
+        max-width: 28.125rem;
+        justify-self: center;
+        margin-top: -2rem;
+    }
+
+    .supervisor {
+        grid-row-start: 2;
+        grid-column: 1 / 2;
+        transform: translateY(50%);
+        margin: 0;
+    }
+
+    .karma {
+        grid-row-start: 3;
+        grid-column: 2 / 3
+    }
+
+    .calc {
+        grid-row-start: 2;
+        grid-column: 3 / 4;
+        transform: translateY(50%);
+    }
+
+    .team {
+        grid-row-start: 2;
+        grid-column: 2 / 3;
+        transform: translateY(-5%);
+    }
+
+    /*Text Styling*/
+
+    h2 {
+        font-size: 1.8rem;
+        width: 100%;
+    }
+
+    h3+p {
+        font-size: 0.8rem;
+    }
+
+    /*Images*/
+    img {
+        transform: translateY(10%)
+    }
+
+}
+
+/*For very small screens*/
+
+@media (max-width: 317px) {
+    html {
+        font-size: 80%;
+    }
+}
+
+/*Attribution styling*/
+
+.attribution {
+    min-width: 20rem;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    color: black;
+    font-size: 0.7rem;
+    text-align: center;
+}
+
+
+.attribution a {
+    text-decoration: none;
+    font-size: 0.8rem;
+    color: darkblue;
+}
+
+
+
+@Media (max-width: 1050px) {
+    .attribution {
+        display: none;
+    }
+}
